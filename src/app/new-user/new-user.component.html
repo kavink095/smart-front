@@ -159,23 +159,99 @@
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h3>Admin Panel</h3>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  routerLink="/route-new-books"
-                  routerLinkActive="active"
-                >
-                  Create New
-                </button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
+            <h3>Create New User</h3>
+          </div>
+
+          <div class="my-4 w-100" id="myChart" width="900" height="380">
+            <form [formGroup]="formadduser">
+              <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="inputId">ID</label>
+                  <input
+                    type="text"
+                    formControlName="firstname"
+                    class="form-control"
+                    id="inputId"
+                    placeholder="id"
+                  />
+                </div>
+                <div class="form-group col-md-10">
+                  <label for="inputFName">First Name</label>
+                  <input
+                    type="text"
+                    formControlName="firstname"
+                    class="form-control"
+                    id="inputFName"
+                    placeholder="first name"
+                  />
+                </div>
+                <div class="form-group col-md-10">
+                  <label for="inputLName">Last Name</label>
+                  <input
+                    type="text"
+                    formControlName="lastName"
+                    class="form-control"
+                    id="inputLName"
+                    placeholder="last name"
+                  />
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="inputAddress">Address</label>
+                  <input
+                    type="input"
+                    formControlName="address"
+                    class="form-control"
+                    id="inputAddress"
+                    placeholder="address"
+                  />
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="inputMobile">Mobile</label>
+                  <input
+                    type="input"
+                    formControlName="mobile"
+                    class="form-control"
+                    id="inputMobile"
+                    placeholder="mobile"
+                  />
+                </div>
               </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="inputState">Gender</label>
+                  <!-- <select
+                  id="inputState"
+                  formControlName="gender"
+                  class="form-control"
+                >
+                  <option selected>Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select> -->
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    formControlName="check"
+                    type="checkbox"
+                    id="gridCheck"
+                  />
+                  <label class="form-check-label" for="gridCheck">
+                    I Agreed
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary col-md-4">
+                Create
               </button>
-            </div>
+              <br />
+              <br />
+              <button type="button" class="btn btn-danger col-md-4">
+                Discard
+              </button>
+            </form>
           </div>
 
           <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->

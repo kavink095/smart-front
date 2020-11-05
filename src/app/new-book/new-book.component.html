@@ -159,23 +159,87 @@
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h3>Admin Panel</h3>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  routerLink="/route-new-books"
-                  routerLinkActive="active"
-                >
-                  Create New
-                </button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
+            <h3>Create New Book</h3>
+          </div>
+
+          <div class="my-4 w-100" id="myChart" width="900" height="380">
+            <div class="form-row">
+              <div class="form-group col-md-10">
+                <label for="inputName">Book Name</label>
+                <input
+                  type="text"
+                  formControlName="name"
+                  class="form-control"
+                  id="inputName"
+                  placeholder="name"
+                />
               </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
+              <div class="form-group col-md-10">
+                <label for="inputWriter">Writer</label>
+                <input
+                  type="input"
+                  formControlName="writer"
+                  class="form-control"
+                  id="inputWriter"
+                  placeholder="writer"
+                />
+              </div>
+              <div class="form-group col-md-5">
+                <label for="inputTagId">Tag ID</label>
+                <input
+                  type="input"
+                  formControlName="tagid"
+                  class="form-control"
+                  id="inputTagId"
+                  placeholder="tag id"
+                />
+              </div>
+              <div class="form-group col-md-5">
+                <label for="inputDesc">Description</label>
+                <input
+                  type="input"
+                  formControlName="desc"
+                  class="form-control"
+                  id="inputDesc"
+                  placeholder="description"
+                />
+              </div>
             </div>
+            <!-- <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="inputState">Gender</label>
+                <select
+                  id="inputState"
+                  formControlName="gender"
+                  class="form-control"
+                > -->
+            <!-- <option selected>Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option> -->
+            <!-- </select>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  formControlName="check"
+                  type="checkbox"
+                  id="gridCheck"
+                />
+                <label class="form-check-label" for="gridCheck">
+                  I Agreed
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary col-md-4">
+              Create
+            </button>
+            <br />
+            <br />
+            <button type="button" class="btn btn-danger col-md-4">
+              Discard
+            </button>
           </div>
 
           <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
