@@ -169,65 +169,71 @@
                   <label for="inputId">ID</label>
                   <input
                     type="text"
-                    formControlName="firstname"
+                    formControlName="id"
                     class="form-control"
                     id="inputId"
                     placeholder="id"
+                    (keyup.enter)="keyID($event)"
                   />
                 </div>
                 <div class="form-group col-md-10">
                   <label for="inputFName">First Name</label>
                   <input
-                    type="text"
+                    type="text" #inputfname
                     formControlName="firstname"
                     class="form-control"
                     id="inputFName"
                     placeholder="first name"
+                    (keyup.enter)="keyFName($event)"
                   />
                 </div>
                 <div class="form-group col-md-10">
                   <label for="inputLName">Last Name</label>
                   <input
-                    type="text"
+                    type="text" #inputlname
                     formControlName="lastName"
                     class="form-control"
                     id="inputLName"
                     placeholder="last name"
+                    (keyup.enter)="keyLName($event)"
                   />
                 </div>
                 <div class="form-group col-md-5">
                   <label for="inputAddress">Address</label>
                   <input
-                    type="input"
+                    type="input" #inputaddress
                     formControlName="address"
                     class="form-control"
                     id="inputAddress"
                     placeholder="address"
+                    (keyup.enter)="keyAddress($event)"
                   />
                 </div>
                 <div class="form-group col-md-5">
                   <label for="inputMobile">Mobile</label>
                   <input
-                    type="input"
+                    type="input" #inputmobile
                     formControlName="mobile"
                     class="form-control"
                     id="inputMobile"
                     placeholder="mobile"
+                    (keyup.enter)="keyMobile($event)"
                   />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-2">
                   <label for="inputState">Gender</label>
-                  <!-- <select
-                  id="inputState"
+                  <select
+                  id="inputState" #inputgender
                   formControlName="gender"
                   class="form-control"
+                  (keyup.enter)="keygender($event)"
                 >
                   <option selected>Choose...</option>
                   <option>Male</option>
                   <option>Female</option>
-                </select> -->
+                </select>
                 </div>
               </div>
               <div class="form-group">
@@ -236,7 +242,7 @@
                     class="form-check-input"
                     formControlName="check"
                     type="checkbox"
-                    id="gridCheck"
+                    id="gridCheck" #inputcheck
                   />
                   <label class="form-check-label" for="gridCheck">
                     I Agreed
@@ -255,7 +261,7 @@
           </div>
 
           <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-          <div class="table-responsive">
+          <!-- <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -265,7 +271,7 @@
                   <th>Contact</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody> -->
                 <!-- <tr *ngFor="let admin of adminss | async">
                                 <td>{{admin.adNIC}}</td>
                                 <td>{{admin.adName}}</td>
@@ -284,9 +290,9 @@
                                         <button class="btn btn-info">Details</button>
                                     </td> -->
                 <!-- </tr> -->
-              </tbody>
+              <!-- </tbody>
             </table>
-          </div>
+          </div> -->
         </main>
       </div>
     </div>

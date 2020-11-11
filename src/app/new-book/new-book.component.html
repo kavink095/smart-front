@@ -163,45 +163,50 @@
           </div>
 
           <div class="my-4 w-100" id="myChart" width="900" height="380">
+            <form [formGroup]="formNewBook">
             <div class="form-row">
               <div class="form-group col-md-10">
                 <label for="inputName">Book Name</label>
                 <input
-                  type="text"
+                  type="text" 
                   formControlName="name"
                   class="form-control"
                   id="inputName"
                   placeholder="name"
+                  (keyup.enter)="keyname($event)"
                 />
               </div>
               <div class="form-group col-md-10">
                 <label for="inputWriter">Writer</label>
                 <input
-                  type="input"
+                  type="input" #inputwriter
                   formControlName="writer"
                   class="form-control"
                   id="inputWriter"
                   placeholder="writer"
+                  (keyup.enter)="keywriter($event)"
                 />
               </div>
               <div class="form-group col-md-5">
                 <label for="inputTagId">Tag ID</label>
                 <input
-                  type="input"
+                  type="input" #inputtag
                   formControlName="tagid"
                   class="form-control"
                   id="inputTagId"
                   placeholder="tag id"
+                  (keyup.enter)="keytag($event)"
                 />
               </div>
               <div class="form-group col-md-5">
                 <label for="inputDesc">Description</label>
                 <input
-                  type="input"
+                  type="input" #inputdesc
                   formControlName="desc"
                   class="form-control"
                   id="inputDesc"
                   placeholder="description"
+                  (keyup.enter)="keydesc($event)"
                 />
               </div>
             </div>
@@ -240,6 +245,7 @@
             <button type="button" class="btn btn-danger col-md-4">
               Discard
             </button>
+          </form>
           </div>
 
           <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
