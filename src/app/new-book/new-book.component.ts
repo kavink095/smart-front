@@ -12,6 +12,8 @@ export class NewBookComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
   @ViewChild('inputwriter', { static: false }) inputElwriter: ElementRef;
   @ViewChild('inputtag', { static: false }) inputEltag: ElementRef;
   @ViewChild('inputdesc', { static: false }) inputEldesc: ElementRef;
@@ -35,6 +37,8 @@ export class NewBookComponent implements OnInit {
   keydesc(event) {
     this.inputEldesc.nativeElement.focus();
   }
+
+
 
 
 }

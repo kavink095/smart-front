@@ -10,6 +10,8 @@ import { BooksComponent } from './books/books.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewBookComponent } from './new-book/new-book.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { RentBookComponent } from './rent-book/rent-book.component';
+import { BookService } from './services/book-service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { NewUserComponent } from './new-user/new-user.component';
     UsersComponent,
     BooksComponent,
     NewBookComponent,
-    NewUserComponent
+    NewUserComponent,
+    RentBookComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { NewUserComponent } from './new-user/new-user.component';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    BookService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

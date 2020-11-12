@@ -164,114 +164,56 @@
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h3>Create New User</h3>
+            <h3>book</h3>
           </div>
 
           <div class="my-4 w-100" id="myChart" width="900" height="380">
-            <form [formGroup]="formadduser">
+            <form [formGroup]="formaddrent">
               <div class="form-row">
                 <div class="form-group col-md-10">
-                  <label for="inputId">ID</label>
+                  <label for="inputId">USER ID</label>
                   <input
                     type="text"
                     formControlName="id"
                     class="form-control"
                     id="inputId"
-                    placeholder="id"
+                    placeholder="user id"
                     (keyup.enter)="keyID($event)"
                   />
                 </div>
                 <div class="form-group col-md-10">
-                  <label for="inputFName">First Name</label>
+                  <label for="inputBookId">BOOK ID</label>
                   <input
                     type="text"
-                    #inputfname
-                    formControlName="firstname"
+                    #inputbook
+                    formControlName="bookid"
                     class="form-control"
-                    id="inputFName"
-                    placeholder="first name"
-                    (keyup.enter)="keyFName($event)"
+                    id="inputBookId"
+                    placeholder="book id"
                   />
                 </div>
                 <div class="form-group col-md-10">
-                  <label for="inputLName">Last Name</label>
+                  <label for="inputtxndate">DATE</label>
                   <input
-                    type="text"
-                    #inputlname
-                    formControlName="lastName"
+                    type="date"
+                    formControlName="txndate"
                     class="form-control"
-                    id="inputLName"
-                    placeholder="last name"
-                    (keyup.enter)="keyLName($event)"
+                    id="inputtxndate"
+                    placeholder="date"
                   />
                 </div>
                 <div class="form-group col-md-10">
-                  <label for="inputEmail">E Mail</label>
+                  <label for="inputretdate">RET DATE</label>
                   <input
-                    type="text"
-                    #inputemail
-                    formControlName="email"
+                    type="date"
+                    formControlName="retdate"
                     class="form-control"
-                    id="inputEmail"
-                    placeholder="e mail"
-                    (keyup.enter)="keyEmail($event)"
-                  />
-                </div>
-                <div class="form-group col-md-5">
-                  <label for="inputAddress">Address</label>
-                  <input
-                    type="input"
-                    #inputaddress
-                    formControlName="address"
-                    class="form-control"
-                    id="inputAddress"
-                    placeholder="address"
-                    (keyup.enter)="keyAddress($event)"
-                  />
-                </div>
-                <div class="form-group col-md-5">
-                  <label for="inputMobile">Mobile</label>
-                  <input
-                    type="input"
-                    #inputmobile
-                    formControlName="mobile"
-                    class="form-control"
-                    id="inputMobile"
-                    placeholder="mobile"
-                    (keyup.enter)="keyMobile($event)"
+                    id="inputretdate"
+                    placeholder="return date"
                   />
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group col-md-2">
-                  <label for="inputState">Gender</label>
-                  <select
-                    id="inputState"
-                    #inputgender
-                    formControlName="gender"
-                    class="form-control"
-                    (keyup.enter)="keygender($event)"
-                  >
-                    <option selected>Choose...</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    formControlName="check"
-                    type="checkbox"
-                    id="gridCheck"
-                    #inputcheck
-                  />
-                  <label class="form-check-label" for="gridCheck">
-                    I Agreed
-                  </label>
-                </div>
-              </div>
+
               <button type="submit" class="btn btn-primary col-md-4">
                 Create
               </button>

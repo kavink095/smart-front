@@ -103,7 +103,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a
+                  routerLink="/route-new-rent"
+                  routerLinkActive="active"
+                  class="nav-link"
+                  href="#"
+                >
                   <span
                     data-feather="bar-chart-2"
                     class="border border-primary"
@@ -164,53 +169,56 @@
 
           <div class="my-4 w-100" id="myChart" width="900" height="380">
             <form [formGroup]="formNewBook">
-            <div class="form-row">
-              <div class="form-group col-md-10">
-                <label for="inputName">Book Name</label>
-                <input
-                  type="text" 
-                  formControlName="name"
-                  class="form-control"
-                  id="inputName"
-                  placeholder="name"
-                  (keyup.enter)="keyname($event)"
-                />
+              <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="inputName">Book Name</label>
+                  <input
+                    type="text"
+                    formControlName="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="name"
+                    (keyup.enter)="keyname($event)"
+                  />
+                </div>
+                <div class="form-group col-md-10">
+                  <label for="inputWriter">Writer</label>
+                  <input
+                    type="input"
+                    #inputwriter
+                    formControlName="writer"
+                    class="form-control"
+                    id="inputWriter"
+                    placeholder="writer"
+                    (keyup.enter)="keywriter($event)"
+                  />
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="inputTagId">Tag ID</label>
+                  <input
+                    type="input"
+                    #inputtag
+                    formControlName="tagid"
+                    class="form-control"
+                    id="inputTagId"
+                    placeholder="tag id"
+                    (keyup.enter)="keytag($event)"
+                  />
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="inputDesc">Description</label>
+                  <input
+                    type="input"
+                    #inputdesc
+                    formControlName="desc"
+                    class="form-control"
+                    id="inputDesc"
+                    placeholder="description"
+                    (keyup.enter)="keydesc($event)"
+                  />
+                </div>
               </div>
-              <div class="form-group col-md-10">
-                <label for="inputWriter">Writer</label>
-                <input
-                  type="input" #inputwriter
-                  formControlName="writer"
-                  class="form-control"
-                  id="inputWriter"
-                  placeholder="writer"
-                  (keyup.enter)="keywriter($event)"
-                />
-              </div>
-              <div class="form-group col-md-5">
-                <label for="inputTagId">Tag ID</label>
-                <input
-                  type="input" #inputtag
-                  formControlName="tagid"
-                  class="form-control"
-                  id="inputTagId"
-                  placeholder="tag id"
-                  (keyup.enter)="keytag($event)"
-                />
-              </div>
-              <div class="form-group col-md-5">
-                <label for="inputDesc">Description</label>
-                <input
-                  type="input" #inputdesc
-                  formControlName="desc"
-                  class="form-control"
-                  id="inputDesc"
-                  placeholder="description"
-                  (keyup.enter)="keydesc($event)"
-                />
-              </div>
-            </div>
-            <!-- <div class="form-row">
+              <!-- <div class="form-row">
               <div class="form-group col-md-2">
                 <label for="inputState">Gender</label>
                 <select
@@ -218,34 +226,34 @@
                   formControlName="gender"
                   class="form-control"
                 > -->
-            <!-- <option selected>Choose...</option>
+              <!-- <option selected>Choose...</option>
                   <option>Male</option>
                   <option>Female</option> -->
-            <!-- </select>
+              <!-- </select>
               </div>
             </div> -->
-            <div class="form-group">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  formControlName="check"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <label class="form-check-label" for="gridCheck">
-                  I Agreed
-                </label>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    formControlName="check"
+                    type="checkbox"
+                    id="gridCheck"
+                  />
+                  <label class="form-check-label" for="gridCheck">
+                    I Agreed
+                  </label>
+                </div>
               </div>
-            </div>
-            <button type="submit" class="btn btn-primary col-md-4">
-              Create
-            </button>
-            <br />
-            <br />
-            <button type="button" class="btn btn-danger col-md-4">
-              Discard
-            </button>
-          </form>
+              <button type="submit" class="btn btn-primary col-md-4">
+                Create
+              </button>
+              <br />
+              <br />
+              <button type="button" class="btn btn-danger col-md-4">
+                Discard
+              </button>
+            </form>
           </div>
 
           <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
