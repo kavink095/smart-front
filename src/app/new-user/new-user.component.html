@@ -252,9 +252,12 @@
                     class="form-control"
                     (keyup.enter)="keygender($event)"
                   >
-                    <option selected>Choose...</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <!-- <option value="" disabled selected>
+                      Select your option
+                    </option> -->
+                    <option *ngFor="let v of values" [value]="v.id">
+                      {{ v.name }}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -272,7 +275,12 @@
                   </label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary col-md-4">
+              <button
+                type="submit"
+                [disabled]="!formadduser.valid"
+                (click)="saveUser()"
+                class="btn btn-primary col-md-4"
+              >
                 Create
               </button>
               <br />

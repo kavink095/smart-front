@@ -35,8 +35,8 @@ export class NewUserComponent implements OnInit {
     email: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     mobile: new FormControl('', Validators.required),
-    check: new FormControl('', Validators.required),
-    gender: new FormControl('Choose...', Validators.required)
+    check: new FormControl(),
+    gender: new FormControl('', Validators.required)
   });
 
   // tslint:disable-next-line: typedef
@@ -79,6 +79,11 @@ export class NewUserComponent implements OnInit {
     this.gender = this.formadduser.get('gender').value;
   }
 
+  public values = [
+    {name: "Male" },
+    {name: "Female" }
+  ];
+
   saveUser(): void{
     this.user.userid = this.formadduser.get('id').value;
     this.user.userfname = this.formadduser.get('firstname').value;
@@ -89,7 +94,13 @@ export class NewUserComponent implements OnInit {
     this.user.gender = this.formadduser.get('gender').value;
     this.user.libid = this.formadduser.get('id').value;
 
-
+    this.userService.saveUser(this.user).subscribe(
+      (result) => {
+        if (result || !Validators === null) {
+          alert('User has been saved succesfully !');
+        }
+      }
+    );
   }
 
 }

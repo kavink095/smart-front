@@ -7,11 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersComponent } from './users/users.component';
 import { BooksComponent } from './books/books.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewBookComponent } from './new-book/new-book.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { RentBookComponent } from './rent-book/rent-book.component';
 import { BookService } from './services/book-service';
+import { UserService } from './services/user-service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,13 @@ import { BookService } from './services/book-service';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
-    BookService
+    BookService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
