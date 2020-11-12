@@ -92,12 +92,20 @@ export class NewUserComponent implements OnInit {
     this.user.useraddress = this.formadduser.get('address').value;
     this.user.usermobile = this.formadduser.get('mobile').value;
     this.user.gender = this.formadduser.get('gender').value;
-    this.user.libid = this.formadduser.get('id').value;
 
     this.userService.saveUser(this.user).subscribe(
       (result) => {
         if (result || !Validators === null) {
           alert('User has been saved succesfully !');
+          this.formadduser.get('id').setValue('');
+          this.formadduser.get('firstname').setValue('');
+          this.formadduser.get('email').setValue('');
+          this.formadduser.get('lastName').setValue('');
+          this.formadduser.get('address').setValue('');
+          this.formadduser.get('mobile').setValue('');
+          this.formadduser.get('gender').setValue('');
+        }else{
+          alert('Failed to save the User..');
         }
       }
     );
