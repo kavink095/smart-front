@@ -14,6 +14,8 @@ import { RentBookComponent } from './rent-book/rent-book.component';
 import { BookService } from './services/book-service';
 import { UserService } from './services/user-service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UserRegScanComponent } from './user-reg-scan/user-reg-scan.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BooksComponent,
     NewBookComponent,
     NewUserComponent,
-    RentBookComponent
+    RentBookComponent,
+    UserRegScanComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

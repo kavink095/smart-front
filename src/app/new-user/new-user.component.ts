@@ -10,11 +10,17 @@ import { UserService } from '../services/user-service';
 })
 export class NewUserComponent implements OnInit {
   // tslint:disable-next-line: no-trailing-whitespace
-  
+
   constructor(private userService: UserService) { }
+
+  public values = [
+    { name: 'Male' },
+    { name: 'Female' }
+  ];
+
+  gender: string;
+
   user: UserDTO = new UserDTO();
-     // tslint:disable-next-line: ban-types
-     gender: String ;
   @ViewChild('inputfname', { static: false }) inputEl: ElementRef;
   @ViewChild('inputlname', { static: false }) inputElLName: ElementRef;
   @ViewChild('inputemail', { static: false }) inputElEMail: ElementRef;
@@ -23,7 +29,7 @@ export class NewUserComponent implements OnInit {
   @ViewChild('inputgender', { static: false }) inputElGender: ElementRef;
   @ViewChild('inputcheck', { static: false }) inputElCheck: ElementRef;
   // tslint:disable-next-line: no-trailing-whitespace
-  
+
   ngOnInit(): void {
   }
 
@@ -75,16 +81,11 @@ export class NewUserComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  getGenderStatus(){
+  getGenderStatus() {
     this.gender = this.formadduser.get('gender').value;
   }
 
-  public values = [
-    {name: "Male" },
-    {name: "Female" }
-  ];
-
-  saveUser(): void{
+  saveUser(): void {
     this.user.userid = this.formadduser.get('id').value;
     this.user.userfname = this.formadduser.get('firstname').value;
     this.user.usermail = this.formadduser.get('email').value;
@@ -96,7 +97,7 @@ export class NewUserComponent implements OnInit {
     this.userService.saveUser(this.user).subscribe(
       (result) => {
         if (result || !Validators === null) {
-          alert('User has been saved succesfully !');
+          alert('User has been saved successfully !');
           this.formadduser.get('id').setValue('');
           this.formadduser.get('firstname').setValue('');
           this.formadduser.get('email').setValue('');
@@ -104,7 +105,7 @@ export class NewUserComponent implements OnInit {
           this.formadduser.get('address').setValue('');
           this.formadduser.get('mobile').setValue('');
           this.formadduser.get('gender').setValue('');
-        }else{
+        } else {
           alert('Failed to save the User..');
         }
       }
