@@ -28,6 +28,7 @@ export class NewUserComponent implements OnInit {
   @ViewChild('inputmobile', { static: false }) inputElMobile: ElementRef;
   @ViewChild('inputgender', { static: false }) inputElGender: ElementRef;
   @ViewChild('inputcheck', { static: false }) inputElCheck: ElementRef;
+  @ViewChild('inputId', { static: false }) btnsave: ElementRef;
   // tslint:disable-next-line: no-trailing-whitespace
 
   ngOnInit(): void {
@@ -45,11 +46,7 @@ export class NewUserComponent implements OnInit {
     gender: new FormControl('', Validators.required)
   });
 
-  // tslint:disable-next-line: typedef
-  keyID(event) {
-    console.log(event);
-    this.inputEl.nativeElement.focus();
-  }
+  
   // tslint:disable-next-line: typedef
   keyFName(event) {
     console.log(event);
@@ -78,6 +75,11 @@ export class NewUserComponent implements OnInit {
   keygender(event) {
     console.log(event);
     this.inputElCheck.nativeElement.focus();
+  }
+  // tslint:disable-next-line: typedef
+  keyID(event) {
+    console.log(event);
+    this.btnsave.nativeElement.focus();
   }
 
   // tslint:disable-next-line: typedef

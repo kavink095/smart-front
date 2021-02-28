@@ -1,7 +1,8 @@
 export class BookDTO {
      bookrefid: string;
-     bookcategory: string;
      bookname: string;
+     bookwriter: string;
+     bookdesc: string;
      bookisstatus: string;
-     cellid: string;
+     rackId: string;
 }

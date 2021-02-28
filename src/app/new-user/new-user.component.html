@@ -55,9 +55,9 @@
     </nav>
 
     <!-- <form [formGroup]="formAddAdmin"> -->
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-4" >
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block pointBackgroundColor sidebar">
+        <nav class="col-md-2 d-none d-md-block pointBackgroundColor sidebar bg-dark">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -67,25 +67,12 @@
                   class="nav-link"
                   href="#"
                 >
-                  <span
+                  <!-- <span
                     data-feather="file"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-user-shield mr-2 ml-2"></i> Admin
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  routerLink="/route-users"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span
-                    data-feather="users"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-users mr-2 ml-2"></i>Users
+                    class="border border-primary bg-white"
+                  ></span> -->
+                  <!-- <button type="button" class="btn btn-primary btn-block">Primary</button> -->
+                  <i class="fas fa-user-shield mr-2 ml-2 text-white"></i><b class="text-white">Admin</b>
                 </a>
               </li>
               <li class="nav-item">
@@ -95,11 +82,13 @@
                   class="nav-link"
                   href="#"
                 >
-                  <span
+                <i class="fas fa-address-book mr-2 ml-2 text-white"></i><b class="ml-1 text-white">Books</b>
+                <!-- <button id="btnBooks" type="button" class="btn btn-primary btn-block">Books</button> -->
+                  <!-- <span
                     data-feather="shopping-cart"
                     class="border border-primary"
                   ></span>
-                  <i class="fas fa-address-book mr-2 ml-2"></i>Books
+                  <i class="fas fa-address-book mr-2 ml-2"></i>Books -->
                 </a>
               </li>
               <li class="nav-item">
@@ -109,11 +98,12 @@
                   class="nav-link"
                   href="#"
                 >
-                  <span
+                <i class="fas fa-users mr-2 ml-2 text-white"></i><b class="text-white">Reports</b>
+                  <!-- <span
                     data-feather="bar-chart-2"
                     class="border border-primary"
                   ></span>
-                  <i class="fas fa-clipboard mr-2 ml-2"></i> Reports
+                  <i class="fas fa-clipboard mr-2 ml-2"></i> Reports -->
                 </a>
               </li>
             </ul>
@@ -121,7 +111,7 @@
             <h6
               class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
             >
-              <span>Saved reports</span>
+              <span class="text-white">Saved reports</span>
               <a class="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
@@ -130,13 +120,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  Last Month Out Books
+                  <b class="text-white">Last Month Out Books</b>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  Last Wrong Shells
+                  <b class="text-white"> Last Wrong Shells</b>
                 </a>
               </li>
               <li class="nav-item">
@@ -147,13 +137,13 @@
                   href="#"
                 >
                   <span data-feather="file-text"></span>
-                  <i class="fas fa-edit mr-2"></i> Maintaince
+                  <i class="fas fa-edit mr-2 text-white"></i> <b class="text-white">Maintaince</b>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  <i class="fas fa-sticky-note mr-2"></i> Daily Reports
+                  <i class="fas fa-sticky-note mr-2 text-white"></i> <b class="text-white">Daily Reports</b>
                 </a>
               </li>
             </ul>
@@ -170,17 +160,7 @@
           <div class="my-4 w-100" id="myChart" width="900" height="380">
             <form [formGroup]="formadduser">
               <div class="form-row">
-                <div class="form-group col-md-10">
-                  <label for="inputId">ID</label>
-                  <input
-                    type="text"
-                    formControlName="id"
-                    class="form-control"
-                    id="inputId"
-                    placeholder="id"
-                    (keyup.enter)="keyID($event)"
-                  />
-                </div>
+                
                 <div class="form-group col-md-10">
                   <label for="inputFName">First Name</label>
                   <input
@@ -239,6 +219,17 @@
                     id="inputMobile"
                     placeholder="mobile"
                     (keyup.enter)="keyMobile($event)"
+                  />
+                </div>
+                <div class="form-group col-md-10">
+                  <label for="inputId">RFID</label>
+                  <input
+                    type="text"
+                    formControlName="id"
+                    class="form-control"
+                    id="inputId"
+                    placeholder="id"
+                    (keyup.enter)="keyID($event)"
                   />
                 </div>
               </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserDTO } from '../dtos/user-dto';
+import { UserService } from '../services/user-service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  user: Array<UserDTO> = [];
 
   ngOnInit(): void {
+    this.loadAllUsers();
+  }
+
+  formUsers = new FormGroup({
+    
+  });
+
+  loadAllUsers(): void {
+    this.userService.getUsersList().subscribe(
+      (result) => {
+        this.user = result;
+        console.log(this.user);
+      }
+    )
   }
 
 }

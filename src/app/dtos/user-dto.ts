@@ -9,6 +9,7 @@ export class UserDTO {
     useractivestatus: number;
     userpassword: string;
     gender: string;
+    auth: string;
 
     libid: number;
 }

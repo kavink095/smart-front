@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { UserDTO } from '../dtos/user-dto';
 
 export const MAIN_URL = 'http://localhost:8081';
-const urls = '/api/v1/users';
+const urls = '/api/v1/users/getAllActive';
 const URL = '/api/v1/users/create';
 
 @Injectable()

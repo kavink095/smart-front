@@ -1,292 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico" />
 
-    <title>Dashboard Template for Bootstrap</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico" />
 
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.1/examples/dashboard/"
-    />
+  <title>Dashboard Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/dashboard/" />
 
-    <!-- Custom styles for this template -->
-    <link
-      href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet" />
 
-  <style>
-    .navbar-custom {
-      background-color: blue;
-    }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet" />
+</head>
 
-  <body>
-    <nav
-      class="navbar navbar-dark fixed-top bg-secondary flex-md-nowrap p-0 shadow navbar-custom"
-    >
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SMART Service</a>
-      <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
-    </nav>
+<style>
+  .navbar-custom {
+    background-color: blue;
+  }
+</style>
 
-    <!-- <form [formGroup]="formAddAdmin"> -->
-    <div class="container-fluid mt-4">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block pointBackgroundColor sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  routerLink="/route-dashboard"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span
-                    data-feather="file"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-user-shield mr-2 ml-2"></i> Admin
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  routerLink="/route-users"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span
-                    data-feather="users"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-users mr-2 ml-2"></i>Users
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  routerLink="/route-books"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span
-                    data-feather="shopping-cart"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-address-book mr-2 ml-2"></i>Books
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  routerLink="/route-new-rent"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span
-                    data-feather="bar-chart-2"
-                    class="border border-primary"
-                  ></span>
-                  <i class="fas fa-clipboard mr-2 ml-2"></i> Reports
-                </a>
-              </li>
-            </ul>
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-custom">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SMART Service</a>
+    <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
 
-            <h6
-              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
-            >
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
+  <!-- <form [formGroup]="formAddAdmin"> -->
+  <div class="container-fluid mt-4 ">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block pointBackgroundColor sidebar bg-dark">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a routerLink="/route-dashboard" routerLinkActive="active" class="nav-link" href="#">
+                <i class="fas fa-user-shield mr-2 ml-2 text-white"></i><b class="text-white">Admin</b>
               </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last Month Out Books
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last Wrong Shells
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  routerLink="/maintaince"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  href="#"
-                >
-                  <span data-feather="file-text"></span>
-                  <i class="fas fa-edit mr-2"></i> Maintaince
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  <i class="fas fa-sticky-note mr-2"></i> Daily Reports
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/route-books" routerLinkActive="active" class="nav-link" href="#">
+                <i class="fas fa-address-book mr-2 ml-2 text-white"></i><b class="ml-1 text-white">Books</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/route-new-rent" routerLinkActive="active" class="nav-link" href="#">
+                <i class="fas fa-users mr-2 ml-2 text-white"></i><b class="text-white">Reports</b>
+              </a>
+            </li>
+          </ul>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-          >
-            <h3>Admin Panel</h3>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  routerLink="/create-admin"
-                  routerLinkActive="active"
-                >
-                  Create New
-                </button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span class="text-white">Saved reports</span>
+            <a class="d-flex align-items-center text-muted" href="#">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                <b class="text-white">Last Month Out Books</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                <b class="text-white"> Last Wrong Shells</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/maintaince" routerLinkActive="active" class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                <i class="fas fa-edit mr-2 text-white"></i> <b class="text-white">Maintaince</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                <i class="fas fa-sticky-note mr-2 text-white"></i> <b class="text-white">Daily Reports</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h3>Admin Panel</h3>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+              <button class="btn btn-sm btn-outline-secondary"  routerLink="/route-new-users"
+              routerLinkActive="active">
+                Create New
               </button>
+              <button class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div>
+
+
+        <form [formGroup]="formUsers">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3  my-5" *ngFor="let users of user">
+                <mdb-card>
+                  <img src="../../assets/user1.png" alt="Card image cap">
+                  <mdb-card-body>
+                    <mdb-card-title>
+                      <h4>{{users.userfname}}</h4>
+                    </mdb-card-title>
+
+                    <mdb-card-text>
+                      {{users.usermobile}}
+                    </mdb-card-text>
+                    <mdb-card-text>
+                      {{users.auth}}
+                    </mdb-card-text>
+
+                  </mdb-card-body>
+                </mdb-card>
+              </div>
             </div>
           </div>
 
-          <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>NIC</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Contact</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- <tr *ngFor="let admin of adminss | async">
-                                <td>{{admin.adNIC}}</td>
-                                <td>{{admin.adName}}</td>
-                                <td>{{admin.adMail}}</td>
-                                <td>{{admin.adMobile}}</td> -->
-                <!-- <td></td>
-                            <td></td>
-                            <td></td> -->
-                <!-- <td><button class="btn btn-danger">Delete</button> -->
-                <!-- <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-                                <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> *ngFor="let admin of admins"-->
-                <!--                 
-                                    
-                                    <td><button class="btn btn-danger mr-1">Delete</button>
-                                        <button class="btn btn-info mr-1">Update</button>
-                                        <button class="btn btn-info">Details</button>
-                                    </td> -->
-                <!-- </tr> -->
-              </tbody>
-            </table>
-          </div>
-        </main>
-      </div>
+        </form>
+
+      </main>
+
+
+
+
     </div>
-    <!-- </form> -->
+  </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>'
-        );
-    </script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+</body>
 
-    <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script>
-      feather.replace();
-    </script>
-
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
-          datasets: [
-            {
-              data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-              lineTension: 0,
-              backgroundColor: "transparent",
-              borderColor: "#007bff",
-              borderWidth: 4,
-              pointBackgroundColor: "#007bff",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: false,
-                },
-              },
-            ],
-          },
-          legend: {
-            display: false,
-          },
-        },
-      });
-    </script>
-  </body>
 </html>

@@ -4,9 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { BookDTO } from '../dtos/book-dto';
 import { Observable } from 'rxjs';
 
-export const MAIN_URL = 'http://localhost:8084';
-const urls = '/api/v1/admins';
+export const MAIN_URL = 'http://localhost:8081';
+const urls = '/api/v1/book';
 const URL = '/api/v1/admins/saves';
+
+const UR1L = '/api/v1/book/create';
 
 @Injectable()
 export class BookService {
@@ -15,7 +17,7 @@ export class BookService {
 
     // tslint:disable-next-line: typedef
     saveBook(bookDto: BookDTO): Observable<boolean> {
-        return this.http.post<boolean>(MAIN_URL + URL, bookDto);
+        return this.http.post<boolean>(MAIN_URL + UR1L, bookDto);
     }
     // getAllAdmins(): Observable<Array<AdminDTO>> {
     //     return this.http.get<Array<AdminDTO>>(MAIN_URL + urls);
