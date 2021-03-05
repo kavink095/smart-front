@@ -4,5 +4,6 @@ export class BookDTO {
      bookwriter: string;
      bookdesc: string;
      bookisstatus: string;
-     rackId: string;
+     booknowsts: string;
+     rackid: string;
 }

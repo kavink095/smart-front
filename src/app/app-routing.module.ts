@@ -5,6 +5,7 @@ import { BooksComponent } from './books/books.component';
 import { NewBookComponent } from './new-book/new-book.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { RentBookComponent } from './rent-book/rent-book.component';
+import { WrongRacksComponent } from './wrong-racks/wrong-racks.component';
 
 const routes: Routes = [
   { path: 'route-dashboard', component: DashboardComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'route-new-books', component: NewBookComponent },
   { path: 'route-new-users', component: NewUserComponent },
   { path: 'route-new-rent', component: RentBookComponent },
+  { path: 'route-wrong', component: WrongRacksComponent },
   { path: '', redirectTo: '/route-dashboard', pathMatch: 'full' }
 ];
 

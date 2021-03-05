@@ -4,26 +4,25 @@ import { BookDTO } from '../dtos/book-dto';
 import { BookService } from '../services/book-service';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  selector: 'app-wrong-racks',
+  templateUrl: './wrong-racks.component.html',
+  styleUrls: ['./wrong-racks.component.css']
 })
-export class BooksComponent implements OnInit {
+export class WrongRacksComponent implements OnInit {
 
   constructor(private bookService: BookService) { }
-
   book: Array<BookDTO> = [];
 
   ngOnInit(): void {
-    this.loadAllBooks();
+    this.getBookWrong();
   }
 
   formBooks = new FormGroup({
 
   });
 
-  loadAllBooks(): void {
-    this.bookService.getBookList().subscribe(
+  getBookWrong(): void {
+    this.bookService.getBookWrong().subscribe(
       (result) => {
         this.book = result;
         console.log(this.book);

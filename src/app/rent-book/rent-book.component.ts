@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Userlogdto } from '../dtos/userlogdto';
+import { UlogService } from '../services/ulog-service';
 
 @Component({
   selector: 'app-rent-book',
@@ -8,23 +10,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RentBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ulogservice: UlogService) { }
 
-  @ViewChild('inputbook', { static: false }) inputEl: ElementRef;
+  racks: Array<Userlogdto> = [];
 
   ngOnInit(): void {
+    this.loadAllRacks();
   }
-  // tslint:disable-next-line: member-ordering
-  formaddrent = new  FormGroup({
-    id: new FormControl('', Validators.required),
-    bookid: new FormControl('', Validators.required),
-    txndate: new FormControl('', Validators.required),
-    retdate: new FormControl('', Validators.required),
-  });
 
-  // tslint:disable-next-line: typedef
-  keyID(event) {
-    console.log(event);
-    this.inputEl.nativeElement.focus();
+  loadAllRacks(): void {
+    this.ulogservice.getLogList().subscribe(
+      (result) => {
+        this.racks = result;
+        console.log(this.racks);
+      }
+    )
   }
 }

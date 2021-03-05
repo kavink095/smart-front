@@ -10,11 +10,11 @@ const URL = '/api/v1/users/create';
 @Injectable()
 export class UserService {
 
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient) { }
 
     // tslint:disable-next-line: typedef
-    saveUser(userDto: UserDTO): Observable<boolean> {
-        return this.http.post<boolean>(MAIN_URL + URL, userDto);
+    saveUser(userDto: UserDTO): Observable<number> {
+        return this.http.post<number>(MAIN_URL + URL, userDto);
     }
     // getAllAdmins(): Observable<Array<AdminDTO>> {
     //     return this.http.get<Array<AdminDTO>>(MAIN_URL + urls);

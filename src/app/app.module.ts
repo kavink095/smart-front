@@ -16,6 +16,10 @@ import { BookService } from './services/book-service';
 import { UserService } from './services/user-service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { RackService } from './services/rack-service';
+import { Userlogdto } from './dtos/userlogdto';
+import { UlogService } from './services/ulog-service';
+import { WrongRacksComponent } from './wrong-racks/wrong-racks.component';
 
 
 
@@ -28,7 +32,8 @@ import { LoginComponent } from './login/login.component';
     NewBookComponent,
     NewUserComponent,
     RentBookComponent,
-    LoginComponent
+    LoginComponent,
+    WrongRacksComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,9 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     BookService,
-    UserService
+    UserService,
+    RackService,
+    UlogService
   ],
   bootstrap: [AppComponent]
 })

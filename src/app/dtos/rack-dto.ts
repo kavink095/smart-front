@@ -1,6 +1,4 @@
 export class RackDTO {
-    rackid: string;
+    racid: string;
     rackdesc: string;
-    libid: number;
-
 }

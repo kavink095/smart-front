@@ -77,7 +77,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a routerLink="/route-wrong" routerLinkActive="active" class="nav-link" href="#">
                 <span data-feather="file-text"></span>
                 <b class="text-white"> Last Wrong Shells</b>
               </a>
@@ -115,6 +115,33 @@
             </button>
           </div>
         </div>
+
+
+        <form [formGroup]="formBooks">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3  my-5" *ngFor="let books of book">
+                <mdb-card>
+                  <!-- <img src="../../assets/user1.png" alt="Card image cap"> -->
+                  <mdb-card-body>
+                    <mdb-card-title>
+                      <h4>{{books.bookrefid}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                      {{books.bookname}}
+                    </mdb-card-text>
+                    <mdb-card-text>
+                      {{books.bookwriter}}
+                    </mdb-card-text>
+                    <mdb-card-text>
+                      {{books.rackId}}
+                    </mdb-card-text>
+                  </mdb-card-body>
+                </mdb-card>
+              </div>
+            </div>
+          </div>
+        </form>
       </main>
     </div>
   </div>

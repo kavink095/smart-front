@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { UserDTO } from '../dtos/user-dto';
 import { UserService } from '../services/user-service';
 
@@ -27,8 +28,8 @@ export class NewUserComponent implements OnInit {
   @ViewChild('inputaddress', { static: false }) inputElAddress: ElementRef;
   @ViewChild('inputmobile', { static: false }) inputElMobile: ElementRef;
   @ViewChild('inputgender', { static: false }) inputElGender: ElementRef;
-  @ViewChild('inputcheck', { static: false }) inputElCheck: ElementRef;
-  @ViewChild('inputId', { static: false }) btnsave: ElementRef;
+  @ViewChild('inputsave', { static: false }) btnElSave: ElementRef;
+  @ViewChild('inputId', { static: false }) inpuElId: ElementRef;
   // tslint:disable-next-line: no-trailing-whitespace
 
   ngOnInit(): void {
@@ -42,49 +43,52 @@ export class NewUserComponent implements OnInit {
     email: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     mobile: new FormControl('', Validators.required),
-    check: new FormControl(),
     gender: new FormControl('', Validators.required)
   });
 
-  
+
   // tslint:disable-next-line: typedef
-  keyFName(event) {
-    console.log(event);
+  keyFName() {
     this.inputElLName.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keyLName(event) {
-    console.log(event);
+  keyLName() {
     this.inputElEMail.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keyEmail(event) {
+  keyEmail() {
     this.inputElAddress.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keyAddress(event) {
-    console.log(event);
+  keyAddress() {
     this.inputElMobile.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keyMobile(event) {
-    console.log(event);
+  keyMobile() {
     this.inputElGender.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keygender(event) {
-    console.log(event);
-    this.inputElCheck.nativeElement.focus();
+  keygender() {
+    this.inpuElId.nativeElement.focus();
   }
   // tslint:disable-next-line: typedef
-  keyID(event) {
-    console.log(event);
-    this.btnsave.nativeElement.focus();
+  keyID() {
+    this.btnElSave.nativeElement.focus();
   }
 
   // tslint:disable-next-line: typedef
   getGenderStatus() {
     this.gender = this.formadduser.get('gender').value;
+  }
+
+  discard() {
+    this.formadduser.get('id').setValue('');
+    this.formadduser.get('firstname').setValue('');
+    this.formadduser.get('email').setValue('');
+    this.formadduser.get('lastName').setValue('');
+    this.formadduser.get('address').setValue('');
+    this.formadduser.get('mobile').setValue('');
+    this.formadduser.get('gender').setValue('');
   }
 
   saveUser(): void {
@@ -96,22 +100,53 @@ export class NewUserComponent implements OnInit {
     this.user.usermobile = this.formadduser.get('mobile').value;
     this.user.gender = this.formadduser.get('gender').value;
 
-    this.userService.saveUser(this.user).subscribe(
-      (result) => {
-        if (result || !Validators === null) {
-          alert('User has been saved successfully !');
-          this.formadduser.get('id').setValue('');
-          this.formadduser.get('firstname').setValue('');
-          this.formadduser.get('email').setValue('');
-          this.formadduser.get('lastName').setValue('');
-          this.formadduser.get('address').setValue('');
-          this.formadduser.get('mobile').setValue('');
-          this.formadduser.get('gender').setValue('');
-        } else {
-          alert('Failed to save the User..');
-        }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want create this user!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, save it!',
+      cancelButtonText: 'No, cancel it'
+    }).then((result) => {
+      if (result.value) {
+        this.userService.saveUser(this.user).subscribe(
+          (result) => {
+            if (result === 2) {
+              Swal.fire({
+                title: 'sorry..',
+                text: 'Cannot duplicate user!',
+                icon: 'warning',
+              })
+            } else if (result === 0) {
+              Swal.fire({
+                title: 'sorry..',
+                text: 'Cannot create user!',
+                icon: 'question',
+              })
+            } else if (result === 1)
+              if (result || !Validators === null) {
+                this.formadduser.get('id').setValue('');
+                this.formadduser.get('firstname').setValue('');
+                this.formadduser.get('email').setValue('');
+                this.formadduser.get('lastName').setValue('');
+                this.formadduser.get('address').setValue('');
+                this.formadduser.get('mobile').setValue('');
+                this.formadduser.get('gender').setValue('');
+              }
+          }
+        );
+        Swal.fire(
+          'Succesfully Created!',
+          'success'
+        )
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'error'
+        )
       }
-    );
+    })
   }
 
 }
